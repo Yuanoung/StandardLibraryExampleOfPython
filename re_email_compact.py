@@ -11,6 +11,5 @@ candidates = [
 
 for candidate in candidates:
     match = address.search(candidate)
-    print('{:<30} {}'.format(
-        candidate, 'Matches' if match else 'No match')
-    )
+    print('{:<30} {}'.format(candidate,
+                             'Matches' if match else 'No match'))

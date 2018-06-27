@@ -15,9 +15,9 @@ address = re.compile(
     
     # The address: first_name.last_name@domain.tld
     (?P<email>
-      \1            # First name
+      \1            # First name  相同，才会match成功
       \.
-      \4 
+      \4            # Last name
       @
       ([\w\d.]+\.)+ # Domain name prefix
       (com|org|edu) # Limit the allowed top-level domains.
@@ -42,3 +42,4 @@ for candidate in candidates:
         print(' Match email:', match.group(5))
     else:
         print(' No match')
+    print()

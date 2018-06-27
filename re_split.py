@@ -1,4 +1,5 @@
 import re
+
 text = '''Paragraph one
 on two lines.
 
@@ -8,11 +9,11 @@ Paragraph three.'''
 
 print('With findall:')
 for num, para in enumerate(re.findall(r'(.+?)(\n{2,}|$)',
-                                        text,
-                                        flags=re.DOTALL)):
+                                      text,
+                                      flags=re.DOTALL)):
     print(num, repr(para))
     print()
-    
+
 print()
 print('With split:')
 for num, para in enumerate(re.split(r'\n{2,}', text)):

@@ -1,5 +1,6 @@
 import re
 
+# 注释掉， 17～20行，输出的结果还是有很大的区别的
 address = re.compile(
     '''
     # A name is made up of letters, and may include "."
@@ -21,9 +22,9 @@ address = re.compile(
     
     # The address itself: username@domain.tld
     (?P<email>
-        [\w\d.+-]+      # Username
+        [\w\d.+-]+      # Username  []中， . 号不需要转义
         @
-        ([\w\d.]+\.)+   # Domain name prefix
+        ([\w\d.]+\.)+   # Domain name prefix  ()中， . 号需要转义
         (com|org|edu)   # Limit the allowed top-level domains.
     )
     >? # Optional closing angle bracket

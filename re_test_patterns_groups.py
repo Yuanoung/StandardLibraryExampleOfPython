@@ -13,18 +13,14 @@ def test_patterns(text, patterns):
         for match in re.finditer(pattern, text):
             s = match.start()
             e = match.end()
-        prefix = ' ' * (s)
-        print(
-            ' {}{!r}{} '.format(prefix,
-                                text[s:e],
-                                ' ' * (len(text) - e)),
-            end=' ',
-        )
-        print(match.groups())
-        if match.groupdict():
-            print('{}{}'.format(
-                ' ' * (len(text) - s),
-                match.groupdict()),
-            )
+            prefix = ' ' * (s)
+            print(' {}{!r}{} '.format(prefix,
+                                      text[s:e],
+                                      ' ' * (len(text) - e)),
+                  end=' ')
+            print(match.groups())
+            if match.groupdict():
+                print('{}{}'.format(' ' * (len(text) - s),
+                                    match.groupdict()),)
         print()
     return

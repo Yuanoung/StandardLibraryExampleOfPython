@@ -7,7 +7,7 @@ address = re.compile(
     # An address: username@domain.tld
     
     # Ignore noreply addresses.
-    (?!noreply@. * $)
+    (?!noreply@.*$)
     [\w\d.+-]+      # Username
     @
     ([\w\d.]+\.)+   # Domain name prefix
